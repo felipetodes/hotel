@@ -20,7 +20,7 @@ export class ReservationFormComponent implements OnInit {
       checkOutDate: ['', Validators.required],
       NomeHospede: ['', Validators.required],
       NumeroQuarto: ['', Validators.required],
-      EmailHospede: ['', Validators.required, Validators.email]
+      EmailHospede: ['', [Validators.required, Validators.email]]
     })
 }
 
