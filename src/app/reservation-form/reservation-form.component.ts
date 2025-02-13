@@ -10,9 +10,7 @@ export class ReservationFormComponent implements OnInit {
 
   reservationForm: FormGroup = new FormGroup({});
 
-  constructor(private formBuilder: FormBuilder){
-
-  }
+  constructor(private formBuilder: FormBuilder){}
 
   ngOnInit(): void {
     this.reservationForm = this.formBuilder.group({
