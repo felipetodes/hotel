@@ -45,5 +45,5 @@
       placeholder="Número do Quarto"
     />
   </div>
-  <button type="submit">Enviar</button>
+  <button type="submit" [disabled]="reservationForm.invalid">Enviar</button>
 </form>
