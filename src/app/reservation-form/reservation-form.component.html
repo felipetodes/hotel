@@ -24,6 +24,14 @@
       title="Check-Out Data"
       placeholder="Enter check-out data"
     />
+    <div
+      *ngIf="
+        reservationForm.get('checkOutDate')?.invalid &&
+        reservationForm.get('checkOutDate')?.touched
+      "
+    >
+      Data de Check-Out é obrigatória
+    </div>
   </div>
 
   <div>
