@@ -42,6 +42,14 @@
       title="Nome do Hospede"
       placeholder="Nome do Hospede"
     />
+    <div
+      *ngIf="
+        reservationForm.get('NomeHospede')?.invalid &&
+        reservationForm.get('NomeHospede')?.touched
+      "
+    >
+      Nome do Hospede é obrigatório
+    </div>
   </div>
   <div>
     <label>Email: </label>
@@ -51,6 +59,14 @@
       title="Email do Hospede"
       placeholder="Email do Hospede"
     />
+    <div
+      *ngIf="
+        reservationForm.get('EmailHospede')?.invalid &&
+        reservationForm.get('EmailHospede')?.touched
+      "
+    >
+      Email do Hospede é obrigatório
+    </div>
   </div>
   <div>
     <label>Numero do Quarto: </label>
@@ -60,6 +76,14 @@
       title="Número do Quarto"
       placeholder="Número do Quarto"
     />
+    <div
+      *ngIf="
+        reservationForm.get('NumeroQuarto')?.invalid &&
+        reservationForm.get('NumeroQuarto')?.touched
+      "
+    >
+      Numero do Quarto é obrigatório
+    </div>
   </div>
   <button type="submit" [disabled]="reservationForm.invalid">Enviar</button>
 </form>
