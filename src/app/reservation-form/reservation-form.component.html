@@ -7,7 +7,12 @@
       title="Check-In Data"
       placeholder="Enter check-in data"
     />
-    <div *ngIf="reservationForm.get('checkInDate')?.invalid">
+    <div
+      *ngIf="
+        reservationForm.get('checkInDate')?.invalid &&
+        reservationForm.get('checkInDate')?.touched
+      "
+    >
       Data de Check-In é obrigatória
     </div>
   </div>
