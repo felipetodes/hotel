@@ -8,6 +8,7 @@
     Check-Out: {{ reservation.checkOutDate }} <br />
     Email: {{ reservation.EmailHospede }} <br />
     <button (click)="deleteReservation(reservation.id)">Excluir</button>
+    <button [routerLink]="['/edit', reservation.id]">Editar</button>
   </li>
 </ul>
 
