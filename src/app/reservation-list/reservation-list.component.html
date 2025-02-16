@@ -1,6 +1,6 @@
-<h2>Lista de Reserva</h2>
+<h2>Lista de Reservas</h2>
 
-<ul>
+<ul *ngIf="reservartions.length; else noReservation">
   <li *ngFor="let reservation of reservartions">
     Hospede: {{ reservation.NomeHospede }} <br />
     Quarto:{{ reservation.NumeroQuarto }} <br />
@@ -9,3 +9,7 @@
     Email: {{ reservation.EmailHospede }} <br />
   </li>
 </ul>
+
+<<ng-template #noReservation>
+  <p>Nenhuma reserva encontrada.</p>
+</ng-template>
