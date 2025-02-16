@@ -2,9 +2,10 @@
 
 <ul>
   <li *ngFor="let reservation of reservartions">
-    Hospede: {{ reservation.guestName }} - Quarto:
-    {{ reservation.guestNumber }} - Check-In: {{ reservation.checkInDate }} -
-    Check-Out: {{ reservation.checkOutDate }} - Email:
-    {{ reservation.guestEmail }}
+    Hospede: {{ reservation.NomeHospede }} <br />
+    Quarto:{{ reservation.NumeroQuarto }} <br />
+    Check-In: {{ reservation.checkInDate }} <br />
+    Check-Out: {{ reservation.checkOutDate }} <br />
+    Email: {{ reservation.EmailHospede }} <br />
   </li>
 </ul>
