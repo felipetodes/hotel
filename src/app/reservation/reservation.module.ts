@@ -1,3 +1,4 @@
+import { HomeModule } from './../home/home.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReservationFormComponent } from '../reservation-form/reservation-form.component';
@@ -14,7 +15,8 @@ import { Router, RouterModule } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    HomeModule
   ]
 })
 export class ReservationModule { }
