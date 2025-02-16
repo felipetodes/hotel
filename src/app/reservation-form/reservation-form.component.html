@@ -1,102 +1,110 @@
 <app-home></app-home>
 
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
-    <label label class="form-label">Check-In na Data</label>
-    <input
-      class="form-control"
-      type="date"
-      formControlName="checkInDate"
-      title="Check-In Data"
-      placeholder="Enter check-in data"
-    />
-    <div
-      class="mb-3"
-      *ngIf="
-        reservationForm.get('checkInDate')?.invalid &&
-        reservationForm.get('checkInDate')?.touched
-      "
-    >
-      Data de Check-In é obrigatória
+  <div class="row mb-3">
+    <div class="col">
+      <label label class="form-label">Check-In na Data</label>
+      <input
+        class="form-control"
+        type="date"
+        formControlName="checkInDate"
+        title="Check-In Data"
+        placeholder="Enter check-in data"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('checkInDate')?.invalid &&
+          reservationForm.get('checkInDate')?.touched
+        "
+      >
+        Data de Check-In é obrigatória
+      </small>
     </div>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Check-Out na Data</label>
-    <input
-      class="form-control"
-      type="date"
-      formControlName="checkOutDate"
-      title="Check-Out Data"
-      placeholder="Enter check-out data"
-    />
-    <div
-      class="mb-3"
-      *ngIf="
-        reservationForm.get('checkOutDate')?.invalid &&
-        reservationForm.get('checkOutDate')?.touched
-      "
-    >
-      Data de Check-Out é obrigatória
+    <div class="col">
+      <label class="form-label">Check-Out na Data</label>
+      <input
+        class="form-control"
+        type="date"
+        formControlName="checkOutDate"
+        title="Check-Out Data"
+        placeholder="Enter check-out data"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('checkOutDate')?.invalid &&
+          reservationForm.get('checkOutDate')?.touched
+        "
+      >
+        Data de Check-Out é obrigatória
+      </small>
     </div>
   </div>
 
-  <div class="mb-3">
-    <label class="form-label">Nome do Hospede: </label>
-    <input
-      class="form-control"
-      type="text"
-      formControlName="NomeHospede"
-      title="Nome do Hospede"
-      placeholder="Nome do Hospede"
-    />
-    <div
-      class="mb-3"
-      *ngIf="
-        reservationForm.get('NomeHospede')?.invalid &&
-        reservationForm.get('NomeHospede')?.touched
-      "
-    >
-      Nome do Hospede é obrigatório
+  <div class="row mb-3">
+    <div class="col">
+      <label class="form-label">Nome do Hospede: </label>
+      <input
+        class="form-control"
+        type="text"
+        formControlName="NomeHospede"
+        title="Nome do Hospede"
+        placeholder="Nome do Hospede"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('NomeHospede')?.invalid &&
+          reservationForm.get('NomeHospede')?.touched
+        "
+      >
+        Nome do Hospede é obrigatório
+      </small>
+    </div>
+    <div class="col">
+      <label class="form-label">Email: </label>
+      <input
+        class="form-control"
+        type="email"
+        formControlName="EmailHospede"
+        title="Email do Hospede"
+        placeholder="Email do Hospede"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('EmailHospede')?.invalid &&
+          reservationForm.get('EmailHospede')?.touched
+        "
+      >
+        Email do Hospede é obrigatório
+      </small>
     </div>
   </div>
-  <div class="mb-3">
-    <label class="form-label">Email: </label>
-    <input
-      class="form-control"
-      type="email"
-      formControlName="EmailHospede"
-      title="Email do Hospede"
-      placeholder="Email do Hospede"
-    />
-    <div
-      class="mb-3"
-      *ngIf="
-        reservationForm.get('EmailHospede')?.invalid &&
-        reservationForm.get('EmailHospede')?.touched
-      "
-    >
-      Email do Hospede é obrigatório
+
+  <div class="row mb-3">
+    <div class="col-3">
+      <label class="form-label">Numero do Quarto: </label>
+      <input
+        class="form-control"
+        type="number"
+        formControlName="NumeroQuarto"
+        title="Número do Quarto"
+        placeholder="Número do Quarto"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          reservationForm.get('NumeroQuarto')?.invalid &&
+          reservationForm.get('NumeroQuarto')?.touched
+        "
+      >
+        Numero do Quarto é obrigatório
+      </small>
     </div>
   </div>
-  <div class="mb-3">
-    <label class="form-label">Numero do Quarto: </label>
-    <input
-      class="form-control"
-      type="number"
-      formControlName="NumeroQuarto"
-      title="Número do Quarto"
-      placeholder="Número do Quarto"
-    />
-    <div
-      class="mb-3"
-      *ngIf="
-        reservationForm.get('NumeroQuarto')?.invalid &&
-        reservationForm.get('NumeroQuarto')?.touched
-      "
-    >
-      Numero do Quarto é obrigatório
-    </div>
-  </div>
+
   <button
     class="btn btn-primary"
     type="submit"
