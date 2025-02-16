@@ -1,15 +1,17 @@
 <app-home></app-home>
 
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
-  <div>
+  <div class="mb-3">
     <label>Check-In na Data</label>
     <input
+      class="form-control"
       type="date"
       formControlName="checkInDate"
       title="Check-In Data"
       placeholder="Enter check-in data"
     />
     <div
+      class="mb-3"
       *ngIf="
         reservationForm.get('checkInDate')?.invalid &&
         reservationForm.get('checkInDate')?.touched
@@ -18,15 +20,17 @@
       Data de Check-In é obrigatória
     </div>
   </div>
-  <div>
+  <div class="mb-3">
     <label>Check-Out na Data</label>
     <input
+      class="form-control"
       type="date"
       formControlName="checkOutDate"
       title="Check-Out Data"
       placeholder="Enter check-out data"
     />
     <div
+      class="mb-3"
       *ngIf="
         reservationForm.get('checkOutDate')?.invalid &&
         reservationForm.get('checkOutDate')?.touched
@@ -36,15 +40,17 @@
     </div>
   </div>
 
-  <div>
+  <div class="mb-3">
     <label>Nome do Hospede: </label>
     <input
+      class="form-control"
       type="text"
       formControlName="NomeHospede"
       title="Nome do Hospede"
       placeholder="Nome do Hospede"
     />
     <div
+      class="mb-3"
       *ngIf="
         reservationForm.get('NomeHospede')?.invalid &&
         reservationForm.get('NomeHospede')?.touched
@@ -53,15 +59,17 @@
       Nome do Hospede é obrigatório
     </div>
   </div>
-  <div>
+  <div class="mb-3">
     <label>Email: </label>
     <input
+      class="form-control"
       type="email"
       formControlName="EmailHospede"
       title="Email do Hospede"
       placeholder="Email do Hospede"
     />
     <div
+      class="mb-3"
       *ngIf="
         reservationForm.get('EmailHospede')?.invalid &&
         reservationForm.get('EmailHospede')?.touched
@@ -70,15 +78,17 @@
       Email do Hospede é obrigatório
     </div>
   </div>
-  <div>
+  <div class="mb-3">
     <label>Numero do Quarto: </label>
     <input
+      class="form-control"
       type="number"
       formControlName="NumeroQuarto"
       title="Número do Quarto"
       placeholder="Número do Quarto"
     />
     <div
+      class="mb-3"
       *ngIf="
         reservationForm.get('NumeroQuarto')?.invalid &&
         reservationForm.get('NumeroQuarto')?.touched
@@ -87,5 +97,11 @@
       Numero do Quarto é obrigatório
     </div>
   </div>
-  <button type="submit" [disabled]="reservationForm.invalid">Enviar</button>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="reservationForm.invalid"
+  >
+    Enviar
+  </button>
 </form>
