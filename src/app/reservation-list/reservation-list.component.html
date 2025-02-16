@@ -7,6 +7,7 @@
     Check-In: {{ reservation.checkInDate }} <br />
     Check-Out: {{ reservation.checkOutDate }} <br />
     Email: {{ reservation.EmailHospede }} <br />
+    <button (click)="deleteReservation(reservation.id)">Excluir</button>
   </li>
 </ul>
 
