@@ -27,15 +27,18 @@ export class ReservationFormComponent implements OnInit {
       NumeroQuarto: ['', Validators.required],
       EmailHospede: ['', [Validators.required, Validators.email]]
     })
-    let id = this.activatedRoute.snapshot.paramMap.get('id');
-    if (id){
-      let reservation = this.reservationService.getReservation(id);
 
-      if(reservation){
-        this.reservationForm.patchValue(reservation);
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log("ID recebido:", id);
+
+    if (id){
+      this.reservationService.getReservation(id).subscribe(reservation => {
+        if(reservation)
+          this.reservationForm.patchValue(reservation);
+      })
       }
     }
-  }
+
     onSubmit(){
     if(this.reservationForm.valid){
       let reservation: Reservation = this.reservationForm.value;

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ReservationService {
 
-  private apiUrl = "http://localhost:3001/";
+  private apiUrl = "http://localhost:3001";
   private reservations: Reservation[] = [];
 
 constructor(private http: HttpClient) {}
@@ -16,13 +16,15 @@ constructor(private http: HttpClient) {}
   getReservations(): Observable<Reservation[]> {
     return this.http.get<Reservation[]>(this.apiUrl + "/reservations");
   }
-  getReservation(id: string): Reservation | undefined
-  {
-  return this.reservations.find(res => res.id === id);
+
+  getReservation(id: string): Observable<Reservation>{
+    return this.http.get<Reservation>(this.apiUrl + "reservation/"+id);
   }
+
+
 addReservation(reservation: Reservation): void {
-reservation.id = Date.now().toString();
-this.reservations.push(reservation);
+  reservation.id = Date.now().toString();
+  this.reservations.push(reservation);
 }
 
 deleReservation(id: string): void {
